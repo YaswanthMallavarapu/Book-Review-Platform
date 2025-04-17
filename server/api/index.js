@@ -16,7 +16,12 @@ const userRoutes = require("../routes/users");
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://book-review-platform-client-smoky.vercel.app",
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 // Connect to MongoDB
